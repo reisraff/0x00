@@ -10,7 +10,6 @@ _start:
     mov eax, 1
     int 0x80
 
-
 section .data
     hl db 'Hello World', 0xa
     hll equ $ - hl
