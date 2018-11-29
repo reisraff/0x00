@@ -1,0 +1,14 @@
+
+hello_world:     file format elf32-i386
+
+
+Disassembly of section .text:
+
+08049000 <.text>:
+ 8049000:	b8 04 00 00 00       	mov    eax,0x4
+ 8049005:	bb 01 00 00 00       	mov    ebx,0x1
+ 804900a:	b9 00 a0 04 08       	mov    ecx,0x804a000
+ 804900f:	ba 0c 00 00 00       	mov    edx,0xc
+ 8049014:	cd 80                	int    0x80
+ 8049016:	b8 01 00 00 00       	mov    eax,0x1
+ 804901b:	cd 80                	int    0x80
