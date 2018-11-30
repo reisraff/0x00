@@ -5,7 +5,6 @@
 ```bash
 gcc -o program program.c -m32 -w
 ```
-```
 
 ### Run this over a bruteforce
 
