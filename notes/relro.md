@@ -1,15 +1,15 @@
-#Relocation Read-Only (RELRO)
+# Relocation Read-Only (RELRO)
 Relocation Read-Only (or RELRO) is a security measure which makes some binary sections read-only.
 
 There are two RELRO "modes": partial and full.
 
-##Partial RELRO
+## Partial RELRO
 Partial RELRO is the default setting in GCC, and nearly all binaries you will see have at least partial RELRO.
 
 From an attackers point-of-view, partial RELRO makes almost no difference, other than it forces the GOT to come before the BSS in memory,
 eliminating the risk of a buffer overflows on a global variable overwriting GOT entries.
 
-##Full RELRO
+## Full RELRO
 Full RELRO makes the entire GOT read-only which removes the ability to perform a "GOT overwrite" attack,
 where the GOT address of a function is overwritten with the location of another function or a ROP gadget an attacker wants to run.
 
