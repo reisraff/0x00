@@ -1,5 +1,5 @@
 
-rop-det-gadgets/program:     file format elf32-i386
+program:     file format elf32-i386
 
 
 Disassembly of section .init:

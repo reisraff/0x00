@@ -1,0 +1,373 @@
+
+program:     file format elf32-i386
+
+
+Disassembly of section .init:
+
+00001000 <_init>:
+    1000:	53                   	push   ebx
+    1001:	83 ec 08             	sub    esp,0x8
+    1004:	e8 d7 00 00 00       	call   10e0 <__x86.get_pc_thunk.bx>
+    1009:	81 c3 f7 2f 00 00    	add    ebx,0x2ff7
+    100f:	8b 83 f4 ff ff ff    	mov    eax,DWORD PTR [ebx-0xc]
+    1015:	85 c0                	test   eax,eax
+    1017:	74 05                	je     101e <_init+0x1e>
+    1019:	e8 7a 00 00 00       	call   1098 <__gmon_start__@plt>
+    101e:	83 c4 08             	add    esp,0x8
+    1021:	5b                   	pop    ebx
+    1022:	c3                   	ret    
+
+Disassembly of section .plt:
+
+00001030 <.plt>:
+    1030:	ff b3 04 00 00 00    	push   DWORD PTR [ebx+0x4]
+    1036:	ff a3 08 00 00 00    	jmp    DWORD PTR [ebx+0x8]
+    103c:	00 00                	add    BYTE PTR [eax],al
+	...
+
+00001040 <printf@plt>:
+    1040:	ff a3 0c 00 00 00    	jmp    DWORD PTR [ebx+0xc]
+    1046:	68 00 00 00 00       	push   0x0
+    104b:	e9 e0 ff ff ff       	jmp    1030 <.plt>
+
+00001050 <gets@plt>:
+    1050:	ff a3 10 00 00 00    	jmp    DWORD PTR [ebx+0x10]
+    1056:	68 08 00 00 00       	push   0x8
+    105b:	e9 d0 ff ff ff       	jmp    1030 <.plt>
+
+00001060 <puts@plt>:
+    1060:	ff a3 14 00 00 00    	jmp    DWORD PTR [ebx+0x14]
+    1066:	68 10 00 00 00       	push   0x10
+    106b:	e9 c0 ff ff ff       	jmp    1030 <.plt>
+
+00001070 <exit@plt>:
+    1070:	ff a3 18 00 00 00    	jmp    DWORD PTR [ebx+0x18]
+    1076:	68 18 00 00 00       	push   0x18
+    107b:	e9 b0 ff ff ff       	jmp    1030 <.plt>
+
+00001080 <__libc_start_main@plt>:
+    1080:	ff a3 1c 00 00 00    	jmp    DWORD PTR [ebx+0x1c]
+    1086:	68 20 00 00 00       	push   0x20
+    108b:	e9 a0 ff ff ff       	jmp    1030 <.plt>
+
+Disassembly of section .plt.got:
+
+00001090 <__cxa_finalize@plt>:
+    1090:	ff a3 f0 ff ff ff    	jmp    DWORD PTR [ebx-0x10]
+    1096:	66 90                	xchg   ax,ax
+
+00001098 <__gmon_start__@plt>:
+    1098:	ff a3 f4 ff ff ff    	jmp    DWORD PTR [ebx-0xc]
+    109e:	66 90                	xchg   ax,ax
+
+Disassembly of section .text:
+
+000010a0 <_start>:
+    10a0:	31 ed                	xor    ebp,ebp
+    10a2:	5e                   	pop    esi
+    10a3:	89 e1                	mov    ecx,esp
+    10a5:	83 e4 f0             	and    esp,0xfffffff0
+    10a8:	50                   	push   eax
+    10a9:	54                   	push   esp
+    10aa:	52                   	push   edx
+    10ab:	e8 22 00 00 00       	call   10d2 <_start+0x32>
+    10b0:	81 c3 50 2f 00 00    	add    ebx,0x2f50
+    10b6:	8d 83 c0 d3 ff ff    	lea    eax,[ebx-0x2c40]
+    10bc:	50                   	push   eax
+    10bd:	8d 83 60 d3 ff ff    	lea    eax,[ebx-0x2ca0]
+    10c3:	50                   	push   eax
+    10c4:	51                   	push   ecx
+    10c5:	56                   	push   esi
+    10c6:	ff b3 f8 ff ff ff    	push   DWORD PTR [ebx-0x8]
+    10cc:	e8 af ff ff ff       	call   1080 <__libc_start_main@plt>
+    10d1:	f4                   	hlt    
+    10d2:	8b 1c 24             	mov    ebx,DWORD PTR [esp]
+    10d5:	c3                   	ret    
+    10d6:	66 90                	xchg   ax,ax
+    10d8:	66 90                	xchg   ax,ax
+    10da:	66 90                	xchg   ax,ax
+    10dc:	66 90                	xchg   ax,ax
+    10de:	66 90                	xchg   ax,ax
+
+000010e0 <__x86.get_pc_thunk.bx>:
+    10e0:	8b 1c 24             	mov    ebx,DWORD PTR [esp]
+    10e3:	c3                   	ret    
+    10e4:	66 90                	xchg   ax,ax
+    10e6:	66 90                	xchg   ax,ax
+    10e8:	66 90                	xchg   ax,ax
+    10ea:	66 90                	xchg   ax,ax
+    10ec:	66 90                	xchg   ax,ax
+    10ee:	66 90                	xchg   ax,ax
+
+000010f0 <deregister_tm_clones>:
+    10f0:	e8 e0 00 00 00       	call   11d5 <__x86.get_pc_thunk.dx>
+    10f5:	81 c2 0b 2f 00 00    	add    edx,0x2f0b
+    10fb:	8d 8a 28 00 00 00    	lea    ecx,[edx+0x28]
+    1101:	8d 82 28 00 00 00    	lea    eax,[edx+0x28]
+    1107:	39 c8                	cmp    eax,ecx
+    1109:	74 1d                	je     1128 <deregister_tm_clones+0x38>
+    110b:	8b 82 ec ff ff ff    	mov    eax,DWORD PTR [edx-0x14]
+    1111:	85 c0                	test   eax,eax
+    1113:	74 13                	je     1128 <deregister_tm_clones+0x38>
+    1115:	55                   	push   ebp
+    1116:	89 e5                	mov    ebp,esp
+    1118:	83 ec 14             	sub    esp,0x14
+    111b:	51                   	push   ecx
+    111c:	ff d0                	call   eax
+    111e:	83 c4 10             	add    esp,0x10
+    1121:	c9                   	leave  
+    1122:	c3                   	ret    
+    1123:	8d 74 26 00          	lea    esi,[esi+eiz*1+0x0]
+    1127:	90                   	nop
+    1128:	c3                   	ret    
+    1129:	8d b4 26 00 00 00 00 	lea    esi,[esi+eiz*1+0x0]
+
+00001130 <register_tm_clones>:
+    1130:	e8 a0 00 00 00       	call   11d5 <__x86.get_pc_thunk.dx>
+    1135:	81 c2 cb 2e 00 00    	add    edx,0x2ecb
+    113b:	55                   	push   ebp
+    113c:	89 e5                	mov    ebp,esp
+    113e:	53                   	push   ebx
+    113f:	8d 8a 28 00 00 00    	lea    ecx,[edx+0x28]
+    1145:	8d 82 28 00 00 00    	lea    eax,[edx+0x28]
+    114b:	83 ec 04             	sub    esp,0x4
+    114e:	29 c8                	sub    eax,ecx
+    1150:	c1 f8 02             	sar    eax,0x2
+    1153:	89 c3                	mov    ebx,eax
+    1155:	c1 eb 1f             	shr    ebx,0x1f
+    1158:	01 d8                	add    eax,ebx
+    115a:	d1 f8                	sar    eax,1
+    115c:	74 14                	je     1172 <register_tm_clones+0x42>
+    115e:	8b 92 fc ff ff ff    	mov    edx,DWORD PTR [edx-0x4]
+    1164:	85 d2                	test   edx,edx
+    1166:	74 0a                	je     1172 <register_tm_clones+0x42>
+    1168:	83 ec 08             	sub    esp,0x8
+    116b:	50                   	push   eax
+    116c:	51                   	push   ecx
+    116d:	ff d2                	call   edx
+    116f:	83 c4 10             	add    esp,0x10
+    1172:	8b 5d fc             	mov    ebx,DWORD PTR [ebp-0x4]
+    1175:	c9                   	leave  
+    1176:	c3                   	ret    
+    1177:	8d b4 26 00 00 00 00 	lea    esi,[esi+eiz*1+0x0]
+    117e:	66 90                	xchg   ax,ax
+
+00001180 <__do_global_dtors_aux>:
+    1180:	55                   	push   ebp
+    1181:	89 e5                	mov    ebp,esp
+    1183:	53                   	push   ebx
+    1184:	e8 57 ff ff ff       	call   10e0 <__x86.get_pc_thunk.bx>
+    1189:	81 c3 77 2e 00 00    	add    ebx,0x2e77
+    118f:	83 ec 04             	sub    esp,0x4
+    1192:	80 bb 28 00 00 00 00 	cmp    BYTE PTR [ebx+0x28],0x0
+    1199:	75 27                	jne    11c2 <__do_global_dtors_aux+0x42>
+    119b:	8b 83 f0 ff ff ff    	mov    eax,DWORD PTR [ebx-0x10]
+    11a1:	85 c0                	test   eax,eax
+    11a3:	74 11                	je     11b6 <__do_global_dtors_aux+0x36>
+    11a5:	83 ec 0c             	sub    esp,0xc
+    11a8:	ff b3 24 00 00 00    	push   DWORD PTR [ebx+0x24]
+    11ae:	e8 dd fe ff ff       	call   1090 <__cxa_finalize@plt>
+    11b3:	83 c4 10             	add    esp,0x10
+    11b6:	e8 35 ff ff ff       	call   10f0 <deregister_tm_clones>
+    11bb:	c6 83 28 00 00 00 01 	mov    BYTE PTR [ebx+0x28],0x1
+    11c2:	8b 5d fc             	mov    ebx,DWORD PTR [ebp-0x4]
+    11c5:	c9                   	leave  
+    11c6:	c3                   	ret    
+    11c7:	8d b4 26 00 00 00 00 	lea    esi,[esi+eiz*1+0x0]
+    11ce:	66 90                	xchg   ax,ax
+
+000011d0 <frame_dummy>:
+    11d0:	e9 5b ff ff ff       	jmp    1130 <register_tm_clones>
+
+000011d5 <__x86.get_pc_thunk.dx>:
+    11d5:	8b 14 24             	mov    edx,DWORD PTR [esp]
+    11d8:	c3                   	ret    
+
+000011d9 <func1>:
+    11d9:	55                   	push   ebp
+    11da:	89 e5                	mov    ebp,esp
+    11dc:	53                   	push   ebx
+    11dd:	83 ec 04             	sub    esp,0x4
+    11e0:	e8 74 01 00 00       	call   1359 <__x86.get_pc_thunk.ax>
+    11e5:	05 1b 2e 00 00       	add    eax,0x2e1b
+    11ea:	81 7d 08 9c 00 00 00 	cmp    DWORD PTR [ebp+0x8],0x9c
+    11f1:	75 24                	jne    1217 <func1+0x3e>
+    11f3:	81 7d 0c 2c 01 00 00 	cmp    DWORD PTR [ebp+0xc],0x12c
+    11fa:	75 1b                	jne    1217 <func1+0x3e>
+    11fc:	c6 80 29 00 00 00 01 	mov    BYTE PTR [eax+0x29],0x1
+    1203:	83 ec 0c             	sub    esp,0xc
+    1206:	8d 90 08 e0 ff ff    	lea    edx,[eax-0x1ff8]
+    120c:	52                   	push   edx
+    120d:	89 c3                	mov    ebx,eax
+    120f:	e8 4c fe ff ff       	call   1060 <puts@plt>
+    1214:	83 c4 10             	add    esp,0x10
+    1217:	90                   	nop
+    1218:	8b 5d fc             	mov    ebx,DWORD PTR [ebp-0x4]
+    121b:	c9                   	leave  
+    121c:	c3                   	ret    
+
+0000121d <func2>:
+    121d:	55                   	push   ebp
+    121e:	89 e5                	mov    ebp,esp
+    1220:	53                   	push   ebx
+    1221:	83 ec 04             	sub    esp,0x4
+    1224:	e8 30 01 00 00       	call   1359 <__x86.get_pc_thunk.ax>
+    1229:	05 d7 2d 00 00       	add    eax,0x2dd7
+    122e:	0f b6 90 29 00 00 00 	movzx  edx,BYTE PTR [eax+0x29]
+    1235:	84 d2                	test   dl,dl
+    1237:	74 34                	je     126d <func2+0x50>
+    1239:	83 7d 08 00          	cmp    DWORD PTR [ebp+0x8],0x0
+    123d:	75 2e                	jne    126d <func2+0x50>
+    123f:	83 7d 0c 0d          	cmp    DWORD PTR [ebp+0xc],0xd
+    1243:	75 28                	jne    126d <func2+0x50>
+    1245:	8b 4d 08             	mov    ecx,DWORD PTR [ebp+0x8]
+    1248:	8b 55 0c             	mov    edx,DWORD PTR [ebp+0xc]
+    124b:	01 ca                	add    edx,ecx
+    124d:	39 55 10             	cmp    DWORD PTR [ebp+0x10],edx
+    1250:	75 1b                	jne    126d <func2+0x50>
+    1252:	c6 80 2a 00 00 00 01 	mov    BYTE PTR [eax+0x2a],0x1
+    1259:	83 ec 0c             	sub    esp,0xc
+    125c:	8d 90 15 e0 ff ff    	lea    edx,[eax-0x1feb]
+    1262:	52                   	push   edx
+    1263:	89 c3                	mov    ebx,eax
+    1265:	e8 f6 fd ff ff       	call   1060 <puts@plt>
+    126a:	83 c4 10             	add    esp,0x10
+    126d:	90                   	nop
+    126e:	8b 5d fc             	mov    ebx,DWORD PTR [ebp-0x4]
+    1271:	c9                   	leave  
+    1272:	c3                   	ret    
+
+00001273 <flag>:
+    1273:	55                   	push   ebp
+    1274:	89 e5                	mov    ebp,esp
+    1276:	53                   	push   ebx
+    1277:	83 ec 04             	sub    esp,0x4
+    127a:	e8 61 fe ff ff       	call   10e0 <__x86.get_pc_thunk.bx>
+    127f:	81 c3 81 2d 00 00    	add    ebx,0x2d81
+    1285:	0f b6 83 29 00 00 00 	movzx  eax,BYTE PTR [ebx+0x29]
+    128c:	84 c0                	test   al,al
+    128e:	74 44                	je     12d4 <flag+0x61>
+    1290:	0f b6 83 2a 00 00 00 	movzx  eax,BYTE PTR [ebx+0x2a]
+    1297:	84 c0                	test   al,al
+    1299:	74 39                	je     12d4 <flag+0x61>
+    129b:	0f b6 83 29 00 00 00 	movzx  eax,BYTE PTR [ebx+0x29]
+    12a2:	0f b6 c0             	movzx  eax,al
+    12a5:	8b 55 08             	mov    edx,DWORD PTR [ebp+0x8]
+    12a8:	29 c2                	sub    edx,eax
+    12aa:	0f b6 83 2a 00 00 00 	movzx  eax,BYTE PTR [ebx+0x2a]
+    12b1:	0f b6 c0             	movzx  eax,al
+    12b4:	39 c2                	cmp    edx,eax
+    12b6:	75 1c                	jne    12d4 <flag+0x61>
+    12b8:	83 ec 0c             	sub    esp,0xc
+    12bb:	8d 83 22 e0 ff ff    	lea    eax,[ebx-0x1fde]
+    12c1:	50                   	push   eax
+    12c2:	e8 99 fd ff ff       	call   1060 <puts@plt>
+    12c7:	83 c4 10             	add    esp,0x10
+    12ca:	83 ec 0c             	sub    esp,0xc
+    12cd:	6a 00                	push   0x0
+    12cf:	e8 9c fd ff ff       	call   1070 <exit@plt>
+    12d4:	90                   	nop
+    12d5:	8b 5d fc             	mov    ebx,DWORD PTR [ebp-0x4]
+    12d8:	c9                   	leave  
+    12d9:	c3                   	ret    
+
+000012da <vuln>:
+    12da:	55                   	push   ebp
+    12db:	89 e5                	mov    ebp,esp
+    12dd:	53                   	push   ebx
+    12de:	81 ec a4 00 00 00    	sub    esp,0xa4
+    12e4:	e8 f7 fd ff ff       	call   10e0 <__x86.get_pc_thunk.bx>
+    12e9:	81 c3 17 2d 00 00    	add    ebx,0x2d17
+    12ef:	83 ec 0c             	sub    esp,0xc
+    12f2:	8d 83 30 e0 ff ff    	lea    eax,[ebx-0x1fd0]
+    12f8:	50                   	push   eax
+    12f9:	e8 42 fd ff ff       	call   1040 <printf@plt>
+    12fe:	83 c4 10             	add    esp,0x10
+    1301:	83 ec 0c             	sub    esp,0xc
+    1304:	8d 85 58 ff ff ff    	lea    eax,[ebp-0xa8]
+    130a:	50                   	push   eax
+    130b:	e8 40 fd ff ff       	call   1050 <gets@plt>
+    1310:	83 c4 10             	add    esp,0x10
+    1313:	90                   	nop
+    1314:	8b 5d fc             	mov    ebx,DWORD PTR [ebp-0x4]
+    1317:	c9                   	leave  
+    1318:	c3                   	ret    
+
+00001319 <main>:
+    1319:	8d 4c 24 04          	lea    ecx,[esp+0x4]
+    131d:	83 e4 f0             	and    esp,0xfffffff0
+    1320:	ff 71 fc             	push   DWORD PTR [ecx-0x4]
+    1323:	55                   	push   ebp
+    1324:	89 e5                	mov    ebp,esp
+    1326:	53                   	push   ebx
+    1327:	51                   	push   ecx
+    1328:	e8 b3 fd ff ff       	call   10e0 <__x86.get_pc_thunk.bx>
+    132d:	81 c3 d3 2c 00 00    	add    ebx,0x2cd3
+    1333:	e8 a2 ff ff ff       	call   12da <vuln>
+    1338:	83 ec 0c             	sub    esp,0xc
+    133b:	8d 83 44 e0 ff ff    	lea    eax,[ebx-0x1fbc]
+    1341:	50                   	push   eax
+    1342:	e8 19 fd ff ff       	call   1060 <puts@plt>
+    1347:	83 c4 10             	add    esp,0x10
+    134a:	b8 01 00 00 00       	mov    eax,0x1
+    134f:	8d 65 f8             	lea    esp,[ebp-0x8]
+    1352:	59                   	pop    ecx
+    1353:	5b                   	pop    ebx
+    1354:	5d                   	pop    ebp
+    1355:	8d 61 fc             	lea    esp,[ecx-0x4]
+    1358:	c3                   	ret    
+
+00001359 <__x86.get_pc_thunk.ax>:
+    1359:	8b 04 24             	mov    eax,DWORD PTR [esp]
+    135c:	c3                   	ret    
+    135d:	66 90                	xchg   ax,ax
+    135f:	90                   	nop
+
+00001360 <__libc_csu_init>:
+    1360:	55                   	push   ebp
+    1361:	57                   	push   edi
+    1362:	56                   	push   esi
+    1363:	53                   	push   ebx
+    1364:	e8 77 fd ff ff       	call   10e0 <__x86.get_pc_thunk.bx>
+    1369:	81 c3 97 2c 00 00    	add    ebx,0x2c97
+    136f:	83 ec 0c             	sub    esp,0xc
+    1372:	8b 6c 24 28          	mov    ebp,DWORD PTR [esp+0x28]
+    1376:	8d b3 f8 fe ff ff    	lea    esi,[ebx-0x108]
+    137c:	e8 7f fc ff ff       	call   1000 <_init>
+    1381:	8d 83 f4 fe ff ff    	lea    eax,[ebx-0x10c]
+    1387:	29 c6                	sub    esi,eax
+    1389:	c1 fe 02             	sar    esi,0x2
+    138c:	85 f6                	test   esi,esi
+    138e:	74 25                	je     13b5 <__libc_csu_init+0x55>
+    1390:	31 ff                	xor    edi,edi
+    1392:	8d b6 00 00 00 00    	lea    esi,[esi+0x0]
+    1398:	83 ec 04             	sub    esp,0x4
+    139b:	55                   	push   ebp
+    139c:	ff 74 24 2c          	push   DWORD PTR [esp+0x2c]
+    13a0:	ff 74 24 2c          	push   DWORD PTR [esp+0x2c]
+    13a4:	ff 94 bb f4 fe ff ff 	call   DWORD PTR [ebx+edi*4-0x10c]
+    13ab:	83 c7 01             	add    edi,0x1
+    13ae:	83 c4 10             	add    esp,0x10
+    13b1:	39 fe                	cmp    esi,edi
+    13b3:	75 e3                	jne    1398 <__libc_csu_init+0x38>
+    13b5:	83 c4 0c             	add    esp,0xc
+    13b8:	5b                   	pop    ebx
+    13b9:	5e                   	pop    esi
+    13ba:	5f                   	pop    edi
+    13bb:	5d                   	pop    ebp
+    13bc:	c3                   	ret    
+    13bd:	8d 76 00             	lea    esi,[esi+0x0]
+
+000013c0 <__libc_csu_fini>:
+    13c0:	f3 c3                	repz ret 
+
+Disassembly of section .fini:
+
+000013c4 <_fini>:
+    13c4:	53                   	push   ebx
+    13c5:	83 ec 08             	sub    esp,0x8
+    13c8:	e8 13 fd ff ff       	call   10e0 <__x86.get_pc_thunk.bx>
+    13cd:	81 c3 33 2c 00 00    	add    ebx,0x2c33
+    13d3:	83 c4 08             	add    esp,0x8
+    13d6:	5b                   	pop    ebx
+    13d7:	c3                   	ret    
