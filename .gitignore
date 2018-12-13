@@ -1,5 +1,6 @@
+hands-on/cft
+
 *.gdb_history
 *peda-session-program.txt
-/hands-on/ctf/*
 
 !.gitkeep
