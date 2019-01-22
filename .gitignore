@@ -1,6 +1,6 @@
 ctf
 
 *.gdb_history
-*peda-session-program.txt
+*peda-*.txt
 
 !.gitkeep
